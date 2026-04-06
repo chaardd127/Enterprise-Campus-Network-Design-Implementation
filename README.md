@@ -113,12 +113,13 @@ Enterprise-Campus-Network-Design-Implementation/
 │   └── ipvaddressing&vlanplan_lists.xlsx   # Full IP addressing & VLAN plan
 │
 ├── verification/     ← show commands output
-│   ├── show-vlan-brief.png
-│   ├── show-ip-route.png
-│   ├── show-ip-ospf-neighbor.png
-│   ├── show-spanning-tree.png
-│   ├── show-etherchannel-summary.png
-│   └── show-ip-dhcp-binding.png
+│   ├── show-vlan-brief
+    ├── show-int-trunk
+│   ├── show-ip-route
+│   ├── show-ip-ospf
+│   ├── show-etherchannel-summary
+│   ├── show-ip-nat(R1)
+│   └── ip dhcp binding(R1).png
 │
 └── wlc-gui/          WLC screenshots
     ├── wlc-dashboard.png
