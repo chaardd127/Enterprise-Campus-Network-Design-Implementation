@@ -95,7 +95,7 @@ Enterprise-Campus-Network-Design-Implementation/
 ├── README.md                        # Project overview (this file)
 ├── network-topology.pkt             # Cisco Packet Tracer simulation file
 │
-├── configs/                         # Device CLI configurations
+├── configs/                         # sh run configs (11 devices)
 │   ├── isp1-config.txt
 │   ├── isp2-config.txt
 │   ├── r1-config.txt
@@ -110,10 +110,23 @@ Enterprise-Campus-Network-Design-Implementation/
 │   └── asw6-config.txt
 │
 ├── docs/
-│   └── ipv4_addressing_lists.xlsx   # Full IP addressing & VLAN plan
+│   └── ipvaddressing&vlanplan_lists.xlsx   # Full IP addressing & VLAN plan
+│
+├── verification/     ← show commands output
+│   ├── show-vlan-brief.png
+│   ├── show-ip-route.png
+│   ├── show-ip-ospf-neighbor.png
+│   ├── show-spanning-tree.png
+│   ├── show-etherchannel-summary.png
+│   └── show-ip-dhcp-binding.png
+│
+└── wlc-gui/          WLC screenshots
+    ├── wlc-dashboard.png
+    ├── wlc-ap-association.png
+    └── wlc-wlan-config.png
 │
 └── diagrams/
-    └── topology-screenshot.png      # Network topology screenshot
+    └── Enterprise Campus Network Design & Implementation.png      # Network topology screenshot
 ```
 ---
 How to Open the Project
