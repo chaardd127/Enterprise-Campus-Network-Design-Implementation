@@ -111,6 +111,7 @@ Enterprise-Campus-Network-Design-Implementation/
 │
 ├── docs/
 │   └── ipvaddressing&vlanplan_lists.xlsx   # Full IP addressing & VLAN plan
+│   └── wlc-gui screenshots/          WLC screenshots
 │
 ├── verification/     ← show commands output
 │   ├── show-vlan-brief
@@ -120,11 +121,6 @@ Enterprise-Campus-Network-Design-Implementation/
 │   ├── show-etherchannel-summary
 │   ├── show-ip-nat(R1)
 │   └── ip dhcp binding(R1).png
-│
-└── wlc-gui/          WLC screenshots
-    ├── wlc-dashboard.png
-    ├── wlc-ap-association.png
-    └── wlc-wlan-config.png
 │
 └── diagrams/
     └── Enterprise Campus Network Design & Implementation.png      # Network topology screenshot
