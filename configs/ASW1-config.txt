@@ -1,0 +1,343 @@
+! ============================================
+! Device: ASW1
+! Enterprise Campus Network Design & Implementation
+! ============================================
+
+Building configuration...
+
+Current configuration : 8945 bytes
+!
+version 15.0
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+service password-encryption
+!
+hostname ASW1
+!
+enable secret 5 $1$mERr$AXoIEvWXwsqfAtEEIJlnJ.
+!
+!
+!
+ip ssh version 2
+ip domain-name enterprisenetdesign.com
+ip name-server 172.16.31.1
+!
+username EnterpriseNetDesign secret 5 $1$mERr$ZihBWu2wYJ3BqkDhdQcwj/
+!
+ip arp inspection vlan 30,40,60,99
+ip arp inspection validate src-mac dst-mac ip
+!
+ip dhcp snooping vlan 30,40,60,99
+no ip dhcp snooping information option
+ip dhcp snooping
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+interface FastEthernet0/1
+description ## to HR/ADMIN ##
+switchport access vlan 40
+ip dhcp snooping limit rate 100
+switchport mode access
+switchport nonegotiate
+switchport port-security mac-address sticky 
+switchport port-security mac-address sticky 0090.21AA.3E48
+spanning-tree portfast
+spanning-tree bpduguard enable
+!
+interface FastEthernet0/2
+description ## to HR/ADMIN ##
+switchport access vlan 40
+ip dhcp snooping limit rate 100
+switchport mode access
+switchport nonegotiate
+switchport port-security
+switchport port-security mac-address sticky 
+switchport port-security mac-address sticky 0060.5C12.BA99
+spanning-tree portfast
+spanning-tree bpduguard enable
+!
+interface FastEthernet0/3
+description ## to HR/ADMIN ##
+switchport access vlan 40
+ip dhcp snooping limit rate 100
+switchport mode access
+switchport nonegotiate
+switchport port-security
+switchport port-security mac-address sticky 
+switchport port-security mac-address sticky 000B.BE92.CDB6
+spanning-tree portfast
+spanning-tree bpduguard enable
+!
+interface FastEthernet0/4
+description ## to HR/ADMIN ##
+switchport access vlan 40
+ip dhcp snooping limit rate 100
+switchport mode access
+switchport nonegotiate
+switchport port-security
+switchport port-security mac-address sticky 
+switchport port-security mac-address sticky 0001.97B4.A9EB
+spanning-tree portfast
+spanning-tree bpduguard enable
+!
+interface FastEthernet0/5
+description ## to HR/ADMIN ##
+switchport access vlan 40
+ip dhcp snooping limit rate 100
+switchport mode access
+switchport nonegotiate
+switchport port-security
+switchport port-security mac-address sticky 
+switchport port-security mac-address sticky 0006.2A21.7881
+spanning-tree portfast
+spanning-tree bpduguard enable
+!
+interface FastEthernet0/6
+description ## to HR/ADMIN ##
+switchport access vlan 40
+ip dhcp snooping limit rate 100
+switchport mode access
+switchport nonegotiate
+switchport port-security
+switchport port-security mac-address sticky 
+switchport port-security mac-address sticky 000B.BE19.3979
+spanning-tree portfast
+spanning-tree bpduguard enable
+!
+interface FastEthernet0/7
+description ## to HR/ADMIN ##
+switchport access vlan 40
+ip dhcp snooping limit rate 100
+switchport mode access
+switchport nonegotiate
+switchport port-security
+switchport port-security mac-address sticky 
+switchport port-security mac-address sticky 0001.97C3.5A23
+spanning-tree portfast
+spanning-tree bpduguard enable
+!
+interface FastEthernet0/8
+description ## to HR/ADMIN ##
+switchport access vlan 40
+ip dhcp snooping limit rate 100
+switchport mode access
+switchport nonegotiate
+switchport port-security
+switchport port-security mac-address sticky 
+switchport port-security mac-address sticky 0002.1696.5C12
+spanning-tree portfast
+spanning-tree bpduguard enable
+!
+interface FastEthernet0/9
+description ## to HR/ADMIN ##
+switchport access vlan 40
+ip dhcp snooping limit rate 100
+switchport mode access
+switchport nonegotiate
+switchport port-security
+switchport port-security mac-address sticky 
+switchport port-security mac-address sticky 00D0.BC1A.6997
+spanning-tree portfast
+spanning-tree bpduguard enable
+!
+interface FastEthernet0/10
+description ## to HR/ADMIN ##
+switchport access vlan 40
+ip dhcp snooping limit rate 100
+switchport mode access
+switchport nonegotiate
+switchport port-security
+switchport port-security mac-address sticky 
+switchport port-security mac-address sticky 0030.F2EC.8E08
+spanning-tree portfast
+spanning-tree bpduguard enable
+!
+interface FastEthernet0/11
+description ## to FINANCE/ACCT ##
+switchport access vlan 30
+ip dhcp snooping limit rate 100
+switchport mode access
+switchport nonegotiate
+switchport port-security
+switchport port-security mac-address sticky 
+switchport port-security mac-address sticky 00D0.BA7A.7255
+spanning-tree portfast
+spanning-tree bpduguard enable
+!
+interface FastEthernet0/12
+description ## to FINANCE/ACCT ##
+switchport access vlan 30
+ip dhcp snooping limit rate 100
+switchport mode access
+switchport nonegotiate
+switchport port-security
+switchport port-security mac-address sticky 
+switchport port-security mac-address sticky 0040.0B6B.6D1D
+spanning-tree portfast
+spanning-tree bpduguard enable
+!
+interface FastEthernet0/13
+description ## to FINANCE/ACCT ##
+switchport access vlan 30
+ip dhcp snooping limit rate 100
+switchport mode access
+switchport nonegotiate
+switchport port-security
+switchport port-security mac-address sticky 
+switchport port-security mac-address sticky 0040.0B5A.60D0
+spanning-tree portfast
+spanning-tree bpduguard enable
+!
+interface FastEthernet0/14
+description ## to FINANCE/ACCT ##
+switchport access vlan 30
+ip dhcp snooping limit rate 100
+switchport mode access
+switchport nonegotiate
+switchport port-security
+switchport port-security mac-address sticky 
+switchport port-security mac-address sticky 0001.96AE.3382
+spanning-tree portfast
+spanning-tree bpduguard enable
+!
+interface FastEthernet0/15
+description ## to FINANCE/ACCT ##
+switchport access vlan 30
+ip dhcp snooping limit rate 100
+switchport mode access
+switchport nonegotiate
+switchport port-security
+switchport port-security mac-address sticky 
+switchport port-security mac-address sticky 0090.2175.E35B
+spanning-tree portfast
+spanning-tree bpduguard enable
+!
+interface FastEthernet0/16
+description ## to FINANCE/ACCT ##
+switchport access vlan 30
+ip dhcp snooping limit rate 100
+switchport mode access
+switchport nonegotiate
+switchport port-security
+switchport port-security mac-address sticky 
+switchport port-security mac-address sticky 000D.BDD1.9E54
+spanning-tree portfast
+spanning-tree bpduguard enable
+!
+interface FastEthernet0/17
+description ## to FINANCE/ACCT ##
+switchport access vlan 30
+ip dhcp snooping limit rate 100
+switchport mode access
+switchport nonegotiate
+switchport port-security
+switchport port-security mac-address sticky 
+switchport port-security mac-address sticky 0002.4A8C.87AE
+spanning-tree portfast
+spanning-tree bpduguard enable
+!
+interface FastEthernet0/18
+description ## to FINANCE/ACCT ##
+switchport access vlan 30
+ip dhcp snooping limit rate 100
+switchport mode access
+switchport nonegotiate
+switchport port-security
+switchport port-security mac-address sticky 
+switchport port-security mac-address sticky 0060.2F2A.73BC
+spanning-tree portfast
+spanning-tree bpduguard enable
+!
+interface FastEthernet0/19
+description ## to FINANCE/ACCT ##
+switchport access vlan 30
+ip dhcp snooping limit rate 100
+switchport mode access
+switchport nonegotiate
+switchport port-security
+switchport port-security mac-address sticky 
+switchport port-security mac-address sticky 0001.9680.DC45
+spanning-tree portfast
+spanning-tree bpduguard enable
+!
+interface FastEthernet0/20
+description ## to FINANCE/ACCT ##
+switchport access vlan 30
+ip dhcp snooping limit rate 100
+switchport mode access
+switchport nonegotiate
+switchport port-security
+switchport port-security mac-address sticky 
+switchport port-security mac-address sticky 00D0.9723.0338
+spanning-tree portfast
+spanning-tree bpduguard enable
+!
+interface FastEthernet0/21
+switchport trunk native vlan 777
+switchport trunk allowed vlan 30,40,50,60,99
+ip arp inspection trust
+ip dhcp snooping trust
+switchport mode trunk
+switchport nonegotiate
+!
+interface FastEthernet0/22
+switchport trunk native vlan 777
+switchport trunk allowed vlan 30,40,50,60,99
+ip arp inspection trust
+ip dhcp snooping trust
+switchport mode trunk
+switchport nonegotiate
+!
+interface FastEthernet0/23
+shutdown
+!
+interface FastEthernet0/24
+shutdown
+!
+interface GigabitEthernet0/1
+shutdown
+!
+interface GigabitEthernet0/2
+shutdown
+!
+interface Vlan1
+no ip address
+shutdown
+!
+interface Vlan99
+ip address 10.0.99.10 255.255.255.0
+!
+ip default-gateway 10.0.99.254
+!
+logging trap debugging
+logging 172.16.31.1
+!
+!
+!
+access-list 1 permit 10.0.20.0 0.0.0.255
+access-list 1 remark ## ONLY IT_ENGINEERING_SSH ##
+line con 0
+logging synchronous
+login local
+exec-timeout 30 0
+!
+line vty 0 4
+access-class 1 in
+logging synchronous
+login local
+transport input ssh
+line vty 5 15
+access-class 1 in
+logging synchronous
+login local
+transport input ssh
+!
+!
+!
+ntp authentication-key 1 md5 080F787E071C111317180503247A7D7165 7
+ntp authenticate
+ntp trusted-key 1
+ntp server 192.168.1.1 key 1
+!
+end
