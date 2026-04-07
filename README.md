@@ -134,7 +134,7 @@ Clone this repository:
    ```
 Open `network-topology.pkt` in Cisco Packet Tracer
 Refer to `configs/` folder for individual device configurations
-Refer to `docs/ipv4_addressing_lists.xlsx` for the full IP plan
+Refer to `docs/ipvaddressing&vlanplan_lists.xlsx` for the full IP plan
 ---
  Author
 chaardd127  
