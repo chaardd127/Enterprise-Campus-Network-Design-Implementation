@@ -99,6 +99,8 @@ license udi pid CISCO2911/K9 sn FTX1524D1FC-
 !
 !
 ip ssh version 2
+ip domain-name enterprisenetdesign.com
+ip name-server 172.16.31.1
 !
 !
 spanning-tree mode pvst
