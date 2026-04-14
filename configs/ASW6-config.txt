@@ -4,7 +4,7 @@
 ! ============================================
 Building configuration...
 
-Current configuration : 2988 bytes
+Current configuration : 2763 bytes
 !
 version 15.0
 no service timestamps log datetime msec
@@ -23,12 +23,7 @@ ip name-server 172.16.31.1
 !
 username EnterpriseNetDesign secret 5 $1$mERr$ZihBWu2wYJ3BqkDhdQcwj/
 !
-ip arp inspection vlan 10,15,20,60,99
-ip arp inspection validate src-mac dst-mac ip
 !
-ip dhcp snooping vlan 10,15,20,60,99
-no ip dhcp snooping information option
-ip dhcp snooping
 !
 spanning-tree mode rapid-pvst
 spanning-tree extend system-id
@@ -121,7 +116,6 @@ interface GigabitEthernet0/1
  switchport trunk native vlan 777
  switchport trunk allowed vlan 10,15,20,50,60,99
  ip arp inspection trust
- ip dhcp snooping trust
  switchport mode trunk
  switchport nonegotiate
  channel-group 6 mode active
@@ -130,7 +124,6 @@ interface GigabitEthernet0/2
  switchport trunk native vlan 777
  switchport trunk allowed vlan 10,15,20,50,60,99
  ip arp inspection trust
- ip dhcp snooping trust
  switchport mode trunk
  switchport nonegotiate
  channel-group 6 mode active
@@ -169,6 +162,7 @@ line vty 5 15
 !
 !
 !
+ntp authentication-key 1 md5 080F787E071C111317180503247A7D7165 7
 ntp authenticate
 ntp trusted-key 1
 ntp server 192.168.1.1 key 1

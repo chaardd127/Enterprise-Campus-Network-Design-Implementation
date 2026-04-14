@@ -32,9 +32,6 @@ username EnterpriseNetDesign secret 5 $1$mERr$ZihBWu2wYJ3BqkDhdQcwj/
 !
 !
 !
-ip dhcp snooping vlan 10,20,30,40,60,99,100
-no ip dhcp snooping information option
-ip dhcp snooping
 !
 ip ssh version 2
 ip domain-name enterprisenetdesign.com
