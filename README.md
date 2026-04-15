@@ -154,13 +154,16 @@ NTP Not Syncing	NTP failed to synchronize across all devices even with correct c
 MD5 Auth Removed on Reopen	MD5 authentication configured on access switches was lost after saving and reopening the project, despite using `write memory`. Configs had to be re-applied manually.
 CAPWAP Not Fully Supported	After research, CAPWAP (Control and Provisioning of Wireless Access Points) is not properly supported in Cisco Packet Tracer. The WLC and LWAP association did not function as expected even during active configuration — this is a known tool limitation, not a configuration error. In a real network environment with physical WLC and AP hardware, CAPWAP would operate correctly.
 Floating Static Route Reset	Floating static routes reverted to default upon reopening, requiring manual reconfiguration each session.
+In addition of that, as I said, Cisco Packet Tracer has some limitations, specifically in Port-Channels, so instead I implement the interface configuration in OSPF, I implement the 'old fashioned-way' global statements per network (<net><wildcard-mask> area <no.>). Plus I applied DHCP Snooping and DAI only in the Layer 2 Switches not in the Port-Channel Switches because it is not applicable and can cause APIPA in the long run.
  Author's Note
 > *"This was my first large-scale virtual network project and it was genuinely challenging — not just in terms of design and configuration, but also in dealing with the unpredictable behavior of Packet Tracer on a complex topology. Every bug I encountered pushed me to research deeper, troubleshoot more carefully, and understand the protocols at a fundamental level. In a real production environment with actual Cisco hardware, these limitations would not exist — but working through them gave me hands-on troubleshooting experience that I believe is just as valuable."*
 >
 > — **chaardd127**
  Workarounds Applied
+```
 Used `Alt+D` to fast-forward simulation time for DHCP convergence
 Manually reconfigured floating static routes per session
 Re-entered MD5 authentication keys on access switches after reopening
+```
 ---
 >  **Note:** All configurations in the `/configs` folder are in **`show running-config` format** — the standard used by network engineers for configuration documentation, backups, and audits. They represent the **intended final state** of each device. Due to the Packet Tracer limitations noted above, some configurations may need to be re-applied when opening the `.pkt` file.
