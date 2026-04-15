@@ -169,6 +169,8 @@ router ospf 1996
 !
 ip nat inside source list 2 interface GigabitEthernet0/1/0 overload
 ip nat inside source list 3 interface GigabitEthernet0/2/0 overload
+ip route 0.0.0.0 0.0.0.0 203.0.113.1 
+ip route 0.0.0.0 0.0.0.0 203.0.113.5 2
 ip classless
 !
 ip flow-export version 9
