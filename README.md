@@ -37,6 +37,7 @@ Network Topology
  VLAN 50               VLAN 50
 ```
 ---
+```
 Devices Used
 Device	Hostname	Role
 Cisco 2911 Router	ISP1, ISP2	Internet Service Providers
@@ -87,6 +88,7 @@ DNS — Internal DNS server at 172.16.31.1
 NTP — NTP server sync with MD5 authentication
 Syslog — Centralized logging to 172.16.31.1
 WLC + LWAP — Wireless LAN Controller managing lightweight APs (VLAN 60/99)
+```
 ---
 Repository Structure
 ```
@@ -132,7 +134,7 @@ Clone this repository:
 ```bash
    git clone https://github.com/chaardd127/Enterprise-Campus-Network-Design-Implementation.git
    ```
-Open `network-topology.pkt` in Cisco Packet Tracer
+Open `Enterprise Campus Network Design & Implementation _UPDATED.pkt` in Cisco Packet Tracer
 Refer to `configs/` folder for individual device configurations
 Refer to `docs/ipvaddressing&vlanplan_lists.xlsx` for the full IP plan
 ---
@@ -151,7 +153,6 @@ Issue	Description
 NTP Not Syncing	NTP failed to synchronize across all devices even with correct configuration and MD5 authentication. This is a known Packet Tracer simulation limitation.
 MD5 Auth Removed on Reopen	MD5 authentication configured on access switches was lost after saving and reopening the project, despite using `write memory`. Configs had to be re-applied manually.
 CAPWAP Not Fully Supported	After research, CAPWAP (Control and Provisioning of Wireless Access Points) is not properly supported in Cisco Packet Tracer. The WLC and LWAP association did not function as expected even during active configuration — this is a known tool limitation, not a configuration error. In a real network environment with physical WLC and AP hardware, CAPWAP would operate correctly.
-DHCP → APIPA on Reopen	Devices reverted to APIPA addresses (169.254.x.x) after reopening the project. Using `Alt+D` to advance simulation time helped temporarily, but removing and re-enabling `ip dhcp snooping` was needed as a workaround.
 Floating Static Route Reset	Floating static routes reverted to default upon reopening, requiring manual reconfiguration each session.
  Author's Note
 > *"This was my first large-scale virtual network project and it was genuinely challenging — not just in terms of design and configuration, but also in dealing with the unpredictable behavior of Packet Tracer on a complex topology. Every bug I encountered pushed me to research deeper, troubleshoot more carefully, and understand the protocols at a fundamental level. In a real production environment with actual Cisco hardware, these limitations would not exist — but working through them gave me hands-on troubleshooting experience that I believe is just as valuable."*
@@ -159,7 +160,6 @@ Floating Static Route Reset	Floating static routes reverted to default upon reop
 > — **chaardd127**
  Workarounds Applied
 Used `Alt+D` to fast-forward simulation time for DHCP convergence
-Re-applied `ip dhcp snooping` after each session when needed
 Manually reconfigured floating static routes per session
 Re-entered MD5 authentication keys on access switches after reopening
 ---
