@@ -97,7 +97,7 @@ Enterprise-Campus-Network-Design-Implementation/
 ├── README.md                        # Project overview (this file)
 ├── network-topology.pkt             # Cisco Packet Tracer simulation file
 │
-├── configs/                         # sh run configs (11 devices)
+├── configs/                         # sh run configs (13 devices)
 │   ├── isp1-config.txt
 │   ├── isp2-config.txt
 │   ├── r1-config.txt
