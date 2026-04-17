@@ -37,35 +37,43 @@ Network Topology
  VLAN 50               VLAN 50
 ```
 ---
+
+Devices Used:
 ```
-Devices Used
-Device	Hostname	Role
-Cisco 2911 Router	ISP1, ISP2	Internet Service Providers
-Cisco 2911 Router	R1	Core Router / Gateway
-Cisco 3650 (L3)	CSW1	Core Switch
-Cisco 3650 (L3)	DSW1, DSW2, DSW3	Distribution Switches
-Cisco 2960 (L2)	ASW1–ASW6	Access Switches
-WLC-PT	WLC	Wireless LAN Controller
-LWAP	LWAP1–LWAP4	Lightweight Access Points
-Server-PT	File/DNS/NTP/DHCP Server	Centralized Services
+Cisco 2911 - for Router (R1) and Internet (ISP 1&2 )
+Cisco 3650 - for Core Switch (CSW1) and Distribution Switches(DSW1-DSW3)
+Cisco 2960  - for Access SWitches
+WLC-PT - for Wireless LAN Controller
+LWAP - for LWAP1–LWAP2	(Lightweight Access Points)
+Server-PT - for File/DNS/NTP Server	Centralized Services
+```
+	
+
 ---
 IPv4 Addressing & VLAN Plan
-VLAN	Department	Subnet	Gateway	Purpose
-10	Sales (Data)	10.0.10.0/24	10.0.10.254	CRM, PCs, General Office
-15	Sales (Voice)	10.0.15.0/24	10.0.15.254	IP Phones (QoS prioritized)
-20	IT & Engineering	10.0.20.0/24	10.0.20.254	Management & High-Privilege
-30	Finance/Accounting	10.0.30.0/24	10.0.30.254	Sensitive Financial Data
-40	HR & Admin	10.0.40.0/24	10.0.40.254	Payroll & Employee Data
-50	Printers	10.0.50.0/29	10.0.50.6	Shared Print Servers
-60	Wi-Fi	10.0.60.0/24	10.0.60.254	Wireless Users
-99	Management	10.0.99.0/24	10.0.99.254	Network Devices (DSW1 side)
-99	Management	10.1.99.0/24	10.1.99.254	Network Devices (DSW2 side)
-99	WLC Management	172.16.31.16/28	172.16.31.30	WLC Only
-100	File Server	172.16.31.0/29	172.16.31.6	Isolated Central Servers
-777	Native/Blackhole	—	—	Trunk Security
+```
+```
+|VLAN |     Department     |	    Subnet       |    Gateway    |          Purpose            |
+|-----| -------------------| -----------------| --------------| ----------------------------| 
+| 10  |    Sales (Data)	   |   10.0.10.0/24	  |  10.0.10.254  | 	CRM, PCs, General Office   | 
+| 15  |    Sales (Voice)   | 	 10.0.15.0/24  	|  10.0.15.254  | IP Phones (QoS prioritized) | 
+| 20  | IT & Engineering   |   10.0.20.0/24	  |  10.0.20.254	 |  Management & High-Privilege| 
+| 30  | Finance/Accounting |   10.0.30.0/24	  |  10.0.30.254	 |   Sensitive Financial Data  | 
+| 40  | 	   HR & Admin     | 	10.0.40.0/24	   |  10.0.40.254	 |    Payroll & Employee Data  |  
+| 50	 |     Printers	      |   10.0.50.0/29	  |  10.0.50.6	   |    Shared Print Servers     | 
+| 60  | 	    Wi-Fi	        |   10.0.60.0/24	  |  10.0.60.254	 |      Wireless Users         | 
+| 99  | 	  Management	     |   10.0.99.0/24	  |  10.0.99.254 	| Network Devices (DSW1 side) | 
+| 99  | 	  Management	     |   10.1.99.0/24	  |  10.1.99.254	 | Network Devices (DSW2 side) | 
+| 99  | 	WLC Management	   |  172.16.31.16/28	|  172.16.31.30	|          WLC Only           | 
+| 100 |  	File Server      |  172.16.31.0/29	 |  172.16.31.6  |  Isolated Central Servers   | 
+| 777 |  Native/Blackhole	 |        —        	|       —	      |         Trunk Security      | 
+
+```
+```
 ---
 Technologies & Protocols Implemented
 Routing
+```
 OSPF — Dynamic routing between R1, CSW1, DSW1, DSW2, DSW3
 Static Default Routes — ISP1 / ISP2 dual WAN links
 NAT/PAT — Internet access via R1 overload (inside source list)
