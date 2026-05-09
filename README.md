@@ -7,35 +7,12 @@ This project presents a comprehensive Enterprise Campus Network designed and sim
 > **Simulation Tool:** Cisco Packet Tracer  
 ---
 Network Topology
-```
-         [ ISP1 ]————————————[ ISP2 ]
-            |    (Dual WAN)      |
-         (203.0.113.5)    (203.0.113.1)
-            |                   |
-            +———[ R1 - Core Router ]———+
-                  (192.168.1.1)
-                        |
-                 [ CSW1 - Core Switch ]
-                 (192.168.1.2)
-                /       |        \
-     [DSW1]——————   [DSW2]———   [DSW3]
-   (192.168.10.2)  (192.168.20.2) (192.168.30.2)
-      /   |   \       |    \          |
-  ASW1  ASW2  ASW3  ASW4   ASW6   [File Server]
-   |     |     |     |      |      VLAN 100
-  PCs   PCs   PCs   PCs    PCs   (172.16.31.0/29)
-  VLAN VLAN  VLAN  VLAN   VLAN
-  30&40 30&40  30  10&15   20
-   |                 |
-[LWAP1]           [LWAP2]
-(VLAN 60)         (VLAN 60)
-   |
-  [WLC]——[CSW1]
-(172.16.31.17)
 
-[Printer1]——[DSW1]    [Printer2]——[DSW2]
- VLAN 50               VLAN 50
-```
+       
+
+![Network Topology](./diagram/Enterprise%20Campus%20Network%20Design%20%26%20Implementation.png)
+*Figure: Enterprise Campus Network Design (Core, Distribution, and Access Layers)*
+
 ---
 
 Devices Used:
